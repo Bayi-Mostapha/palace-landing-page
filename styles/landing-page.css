@@ -52,7 +52,7 @@ body {
 /* ********************************* */
 
 .div {
-    height: 50vh;
+    height: 100vh;
 }
 
 .carousel-wrapper {
@@ -394,7 +394,7 @@ body {
 
 .static {
     position: absolute;
-    top: 150vh;
+    top: 300vh;
 }
 
 /* ******************************************** */

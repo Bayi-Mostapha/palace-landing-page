@@ -40,15 +40,15 @@ window.addEventListener('scroll', function () {
         radio1.checked = true;
         carousel();
         document.querySelector('.carousel-wrapper').classList.remove('static');
-    } else if (scrollPosition >= viewportHeight && scrollPosition < viewportHeight/4 * 2) {
+    } else if (scrollPosition >= viewportHeight && scrollPosition < viewportHeight * 2) {
         radio2.checked = true;
         carousel();
         document.querySelector('.carousel-wrapper').classList.remove('static');
-    } else if (scrollPosition >= viewportHeight * 2 && scrollPosition < viewportHeight/4 * 3) {
+    } else if (scrollPosition >= viewportHeight * 2 && scrollPosition < viewportHeight * 3) {
         radio3.checked = true;
         carousel();
         document.querySelector('.carousel-wrapper').classList.remove('static');
-    } else if (scrollPosition >= viewportHeight * 3 && scrollPosition < viewportHeight/4 * 4) {
+    } else if (scrollPosition >= viewportHeight * 3 && scrollPosition < viewportHeight * 4) {
         document.querySelector('.carousel-wrapper').classList.add('static');
     }
 });
