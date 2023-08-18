@@ -15,10 +15,10 @@ const appearOptions = {
 const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
-            entry.target.classList.remove('appear');
-        } else {
-            entry.target.classList.add('appear');
+            return
         }
+        entry.target.classList.add('appear');
+        appearOnScroll.unobserve(entry.target);
     });
 }, appearOptions);
 
@@ -26,6 +26,16 @@ faders.forEach(fader => {
     appearOnScroll.observe(fader);
 });
 
+window.addEventListener('scroll', function () {
+    if (window.scrollY === 0) {
+        faders.forEach(fader => {
+            fader.classList.remove('appear');
+            appearOnScroll.observe(fader);
+        })
+    }
+});
+
+// *********************************************
 
 let radio1 = document.getElementById('image1');
 let radio2 = document.getElementById('image2');
@@ -36,19 +46,19 @@ window.addEventListener('scroll', function () {
     let scrollPosition = window.scrollY;
     let viewportHeight = window.innerHeight;
 
-    if (scrollPosition < viewportHeight) {
+    if (scrollPosition < viewportHeight / 3) {
         radio1.checked = true;
         carousel();
         document.querySelector('.carousel-wrapper').classList.remove('static');
-    } else if (scrollPosition >= viewportHeight && scrollPosition < viewportHeight * 2) {
+    } else if (scrollPosition >= viewportHeight / 3 && scrollPosition < viewportHeight / 3 * 2) {
         radio2.checked = true;
         carousel();
         document.querySelector('.carousel-wrapper').classList.remove('static');
-    } else if (scrollPosition >= viewportHeight * 2 && scrollPosition < viewportHeight * 3) {
+    } else if (scrollPosition >= viewportHeight / 3 * 2 && scrollPosition < viewportHeight / 3 * 3) {
         radio3.checked = true;
         carousel();
         document.querySelector('.carousel-wrapper').classList.remove('static');
-    } else if (scrollPosition >= viewportHeight * 3 && scrollPosition < viewportHeight * 4) {
+    } else if (scrollPosition >= viewportHeight / 3 * 3 && scrollPosition < viewportHeight / 3 * 4) {
         document.querySelector('.carousel-wrapper').classList.add('static');
     }
 });

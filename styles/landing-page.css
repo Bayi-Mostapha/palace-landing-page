@@ -27,9 +27,9 @@ body {
     height: 50px;
     border-radius: 25px;
 
-    border-top: 4px solid var(--primary-color);
-    border-right: 4px solid var(--primary-color);
-    border-bottom: 4px solid var(--primary-color);
+    border-top: 4px solid var(--main-color);
+    border-right: 4px solid var(--main-color);
+    border-bottom: 4px solid var(--main-color);
     border-left: 4px solid white;
 
     animation: spin 1s linear infinite;
@@ -52,6 +52,10 @@ body {
 /* ********************************* */
 
 .div {
+    height: 33vh;
+}
+
+.div101 {
     height: 100vh;
 }
 
@@ -292,14 +296,14 @@ body {
 }
 
 /*  */
-.right {
+.hero .right {
     width: 600px;
     height: 600px;
 
     position: relative;
 }
 
-.right .inputs {
+.hero .right .inputs {
     width: .1px;
     height: .1px;
 
@@ -312,7 +316,7 @@ body {
     opacity: 0;
 }
 
-.carousel-item {
+.hero .carousel-item {
     width: 600px;
     height: 600px;
     position: absolute;
@@ -323,7 +327,7 @@ body {
     transition: all 300ms;
 }
 
-.carousel-item img {
+.hero  .carousel-item img {
     width: 100%;
     object-fit: contain;
 }
@@ -394,7 +398,7 @@ body {
 
 .static {
     position: absolute;
-    top: 300vh;
+    top: 100vh;
 }
 
 /* ******************************************** */
@@ -404,7 +408,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 5%;
-    margin-top: 250px;
+    margin-top: 100px;
 }
 
 .section1 .left {
