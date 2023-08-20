@@ -1,11 +1,7 @@
 body {
-    --txt: black;
-    --txt2: white;
-
-    padding: 0;
-    position: static;
     background-color: white;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+    width: 100vw;
 }
 
 /* ************************************* */
@@ -36,7 +32,7 @@ body {
 }
 
 .hide-overflow {
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 @keyframes spin {
@@ -60,10 +56,12 @@ body {
 }
 
 .carousel-wrapper {
+    font-size: var(--parent-default);
     width: 100vw;
     height: 100vh;
 
 
+    overflow: hidden;
     position: fixed;
     top: 0;
 }
@@ -78,12 +76,13 @@ body {
     z-index: -1;
 
     clip-path: ellipse(80% 80% at 50% 10%);
-    background: var(--main-color);
-    background: linear-gradient(90deg, rgba(64, 56, 227, 1) 37%, rgba(74, 143, 255, 1) 100%);
+    background-color: var(--main-color);
+    background: var(--circle-lr);
 }
 
 .lp-navbar {
-    margin: 0 auto;
+    font-size: var(--default);
+    margin: 25px auto;
     width: 90%;
     padding: 10px 0;
     display: flex;
@@ -92,6 +91,7 @@ body {
 }
 
 .logo {
+    font-size: var(--big);
     text-transform: uppercase;
     font-weight: 500;
     color: var(--txt2);
@@ -105,6 +105,7 @@ body {
 }
 
 .navlink {
+    font-size: var(--default);
     font-weight: 300;
     text-transform: capitalize;
     text-decoration: none;
@@ -112,6 +113,7 @@ body {
 }
 
 .active {
+    font-weight: 400;
     border-bottom: 2px solid var(--txt2);
 }
 
@@ -123,8 +125,8 @@ body {
 
 .mb-login {
     text-transform: capitalize;
-    padding: 5px 15px 5px 35px;
-    height: 30px;
+    padding: .33em 1em .33em 2.5em;
+    height: 2em;
     overflow: hidden;
 
     position: relative;
@@ -140,8 +142,8 @@ body {
 }
 
 .icon {
-    width: 30px;
-    height: 30px;
+    width: 2em;
+    height: 2em;
 
     position: absolute;
     top: -2px;
@@ -157,17 +159,17 @@ body {
 }
 
 .icon i {
-    font-size: 26px;
+    font-size: 1.5em;
     margin-top: 10px;
 }
 
 .mb-rq {
-    height: 30px;
+    height: 2em;
 
     text-transform: capitalize;
     background-color: var(--txt2);
     color: var(--main-color);
-    padding: 0 20px;
+    padding: 0 1.1em;
     border-radius: 30px;
     font-weight: 600;
     font-size: var(--small);
@@ -179,9 +181,9 @@ body {
 }
 
 .hero {
-    margin: 0 auto;
-    margin-top: 100px;
+    margin: 100px auto;
     width: 90%;
+    height: 100%;
 
     display: flex;
     justify-content: center;
@@ -200,23 +202,26 @@ body {
 
 .hero .left h1 {
     text-transform: capitalize;
-    font-size: var(--large);
+    font-size: var(--x-big);
     font-weight: 500;
 }
 
 .hero .left p {
+    font-size: var(--default);
+    line-height: 2em;
     font-weight: 300;
 }
 
 .hbtns {
+    margin-top: 20px;
+
     display: flex;
     align-items: center;
     gap: 30px;
-
-    margin-top: 20px;
 }
 
 .hero .action-btn {
+    font-size: var(--default);
     text-transform: capitalize;
     background-color: var(--txt2);
     color: var(--main-color);
@@ -226,6 +231,7 @@ body {
 }
 
 .hero .action-btn2 {
+    font-size: var(--default);
     color: var(--txt2);
     text-transform: capitalize;
     font-weight: 300;
@@ -237,6 +243,7 @@ body {
 }
 
 .hero .ratings {
+    font-size: var(--default);
     margin-top: 15px;
     width: fit-content;
     height: 40px;
@@ -282,7 +289,7 @@ body {
 
 .hero .stars {
     margin-left: 105px;
-    color: rgb(245, 206, 5);
+    color: var(--yellow);
 }
 
 .hero .stars i {
@@ -297,8 +304,8 @@ body {
 
 /*  */
 .hero .right {
-    width: 600px;
-    height: 600px;
+    width: 45%;
+    height: 45%;
 
     position: relative;
 }
@@ -317,31 +324,30 @@ body {
 }
 
 .hero .carousel-item {
-    width: 600px;
-    height: 600px;
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 
-    flex-shrink: 0;
     transition: all 300ms;
 }
 
-.hero  .carousel-item img {
+.hero .carousel-item img {
     width: 100%;
     object-fit: contain;
 }
 
 #carousel-item1 {
-    left: 200%;
+    left: 100vw;
 }
 
 #carousel-item2 {
-    left: 200%;
+    left: 100vw;
 }
 
 #carousel-item3 {
-    left: 200%;
+    left: 100vw;
 }
 
 .hero .carousel-item .circle {
@@ -352,12 +358,12 @@ body {
     justify-content: center;
     align-items: center;
 
-    width: 80px;
-    height: 80px;
+    width: 3em;
+    height: 3em;
     background-color: var(--txt2);
     border-radius: 50%;
 
-    font-size: var(--large);
+    font-size: var(--big);
     font-weight: bold;
     color: var(--main-color);
     text-transform: uppercase;
@@ -368,24 +374,24 @@ body {
     animation: floating 5s ease-in-out infinite;
     animation-delay: 200ms;
 
-    top: -50px;
-    left: -20px;
+    top: -2em;
+    left: -1em;
 }
 
 .hero .carousel-item .circle2 {
     animation: floating 6s ease-in-out infinite;
     animation-delay: 200ms;
 
-    top: 300px;
-    left: -40px;
+    top: 90%;
+    left: -2em;
 }
 
 .hero .carousel-item .circle3 {
     animation: floating 7s ease-in-out infinite;
     animation-delay: 200ms;
 
-    top: -20px;
-    right: -20px;
+    top: -0.8em;
+    right: -1.2em;
 }
 
 .visible {
@@ -394,6 +400,7 @@ body {
 
 .visible img {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    animation: floating 4s ease-in-out infinite;
 }
 
 .static {
@@ -401,17 +408,57 @@ body {
     top: 100vh;
 }
 
+/*  */
+
+.go-down {
+    width: 40px;
+    height: 40px;
+
+    position: absolute;
+    top: 80vh;
+    left: 50%;
+    transform: translate(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid var(--txt2);
+    border-radius: 50%;
+    transition: all 300ms;
+}
+
+.go-down i {
+    font-size: 20px;
+    transform: rotate(90deg);
+    color: var(--txt2);
+    transition: all 300ms;
+}
+
+.go-down:hover {
+    background-color: var(--txt2);
+}
+
+.go-down:hover i {
+    color: var(--main-color);
+}
+
 /* ******************************************** */
 
 .section1 {
+    font-size: var(--parent-default);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5%;
-    margin-top: 100px;
+
+    overflow-x: hidden;
+    margin-top: 50px;
 }
 
 .section1 .left {
+    line-height: var(--x-big);
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -420,6 +467,9 @@ body {
 }
 
 .section1 h2 {
+    padding: 5px 0;
+
+    font-size: var(--x-big);
     width: fit-content;
     position: relative;
     text-transform: capitalize;
@@ -443,22 +493,27 @@ body {
     content: '?';
     position: absolute;
     top: -20px;
-    right: -30px;
+    right: -0.75em;
     transform: rotate(20deg);
 
     color: var(--main-color);
     font-weight: 700;
-    font-size: 3rem;
+    font-size: var(--x-big);
     animation: floating2 6s ease-in-out infinite;
+}
+
+.section1 .left p {
+    font-size: var(--default);
 }
 
 .learn-more {
     padding: 5px 20px;
-    font-weight: 400;
+    font-weight: 300;
     font-size: var(--big);
     text-transform: capitalize;
 
     background-color: var(--main-color);
+    background: var(--action-btn-lr);
     border-radius: 30px;
     color: var(--txt2);
 }
@@ -479,7 +534,8 @@ body {
 
 /* ******************************************** */
 .section2 {
-    margin-top: 200px;
+    font-size: var(--parent-default);
+    margin-top: 150px;
 
     display: flex;
     flex-direction: column;
@@ -488,6 +544,7 @@ body {
 }
 
 .section2 .header {
+    line-height: var(--big);
     width: 35%;
 
     display: flex;
@@ -496,12 +553,10 @@ body {
     gap: 10px;
 }
 
-.section2 .header p {
-    word-wrap: normal;
-    text-align: center;
-}
-
 .section2 h2 {
+    padding: 5px 0;
+
+    font-size: var(--x-big);
     width: fit-content;
     position: relative;
     text-transform: capitalize;
@@ -521,16 +576,23 @@ body {
     border-radius: 5px;
 }
 
+.section2 .header p {
+    font-size: var(--default);
+    word-wrap: normal;
+    text-align: center;
+    width: 400px;
+}
+
 .section2 .body {
     width: 100%;
-    min-height: 100dvh;
+    min-height: 100vh;
     display: flex;
     align-items: flex-start;
 }
 
 .section2 .body .left {
     width: 50%;
-    height: 100dvh;
+    height: 100vh;
 
     position: relative;
 }
@@ -539,20 +601,20 @@ body {
     position: absolute;
     top: -25px;
     left: -50vh;
-    width: 100vh;
-    height: 100vh;
+    width: 90vh;
+    height: 90vh;
     border-radius: 50%;
     background-color: var(--main-color);
-    background: linear-gradient(90deg, rgba(64, 56, 227, 1) 37%, rgba(74, 143, 255, 1) 100%);
+    background: var(--circle-lr);
 }
 
 .section2 .left .image-container {
-    width: 700px;
+    width: 50vw;
 
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    left: -100px;
+    transform: translateY(-60%);
+    left: -5vw;
 }
 
 .section2 img {
@@ -580,16 +642,16 @@ body {
 
 .feature,
 .feature2 {
-    height: 50px;
-    width: fit-content;
-    padding: 5px 30px 5px 55px;
+    text-align: center;
+    height: 3rem;
 
     position: relative;
 
     display: flex;
+    justify-content: center;
     align-items: center;
 
-    border-radius: 30px;
+    border-radius: 50px;
     border: 2px solid var(--main-color);
     color: var(--txt2);
     font-weight: 400;
@@ -614,8 +676,8 @@ body {
 }
 
 .n {
-    width: 50px;
-    height: 50px;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
 
     position: absolute;
@@ -634,18 +696,22 @@ body {
 }
 
 .s2-action {
-    padding: 8px 25px;
-    border-radius: 30px;
+    margin-top: 25px;
+    padding: 10px 25px;
+    border-radius: 50px;
 
+    font-size: var(--big);
     background-color: var(--main-color);
+    background: var(--action-btn-lr);
     color: var(--txt2);
     text-transform: capitalize;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 /* ******************************************** */
 
 .section3 {
+    font-size: var(--parent-default);
     margin: 150px auto;
     width: 90%;
 
@@ -656,6 +722,9 @@ body {
 }
 
 .section3 h2 {
+    padding: 5px 0;
+
+    font-size: var(--x-big);
     width: fit-content;
     position: relative;
     text-transform: capitalize;
@@ -698,7 +767,7 @@ body {
     padding: 2px 40px;
 
     text-align: center;
-    font-size: 2rem;
+    font-size: var(--x-big);
     font-weight: 300;
     text-transform: uppercase;
     border: 1px solid var(--main-color);
@@ -706,12 +775,14 @@ body {
 }
 
 .section3 p {
+    font-size: var(--default);
     color: var(--main-color);
     text-align: center;
 }
 
 /* ******************************************** */
 .section4 {
+    font: var(--parent-default);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -720,15 +791,16 @@ body {
 .s4-circle {
     position: relative;
 
-    width: 100vh;
-    height: 100vh;
+    width: 90vh;
+    height: 90vh;
     border-radius: 50%;
     background-color: var(--main-color);
+    background: var(--circle-lr);
 }
 
 .section4 .image-container {
     position: absolute;
-    width: 300px;
+    width: 50%;
 }
 
 .section4 .image-container img {
@@ -764,7 +836,8 @@ body {
 
 /* ******************************************** */
 .section5 {
-    margin: 150px auto;
+    font-size: var(--parent-default);
+    margin: 100px auto;
     width: 50%;
 
     text-align: center;
@@ -774,10 +847,16 @@ body {
     gap: 10px;
 }
 
+.section5 h2 {
+    padding: 5px 0;
+    font-size: var(--x-big);
+    text-transform: capitalize;
+}
+
 .section5 .circle-container {
-    height: 45px;
+    height: 3rem;
     width: fit-content;
-    padding: 10px;
+    padding: 1.3rem;
     overflow: hidden;
 
     display: flex;
@@ -785,27 +864,34 @@ body {
     gap: 10px;
 
     border: 1px solid var(--main-color);
-    border-radius: 30px;
+    border-radius: 50px;
 }
 
 .section5 .circle-container .circle {
-    width: 50px;
-    height: 50px;
+    width: 3.3rem;
+    height: 3.3rem;
     border-radius: 50%;
     background-color: var(--main-color);
 }
 
 .section5 .circle-container p {
     text-transform: capitalize;
-    font-size: var(--big);
+    font-size: var(--x-big);
     font-weight: 600;
 }
 
+.section5>p {
+    width: 500px;
+    line-height: var(--x-big);
+}
+
 .s5-action {
-    padding: 8px 25px;
+    padding: 10px 20px;
     border-radius: 30px;
 
+    font-size: var(--big);
     background-color: var(--main-color);
+    background: var(--action-btn-lr);
     color: var(--txt2);
     text-transform: capitalize;
     font-weight: 500;
@@ -907,5 +993,20 @@ body {
 
     100% {
         transform: translateY(-44%) rotate(10deg);
+    }
+}
+
+/* ********************************************************* */
+@media (min-width:1600px) {
+    html {
+        font-size: 24px;
+    }
+
+    .lp-navbar {
+        width: 1600px;
+    }
+
+    .section2 .header p {
+        width: 600px;
     }
 }
