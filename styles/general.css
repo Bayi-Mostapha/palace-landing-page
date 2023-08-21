@@ -4,19 +4,19 @@
     --txt: black;
     --txt2: white;
     --gray-txt: rgb(162, 171, 186);
-    --main-color: rgb(74, 143, 255);
+    --main-color: rgb(79, 12, 189);
     --main-color-shadow: rgba(74, 143, 255, 0.15);
     --light-gray: rgb(236, 237, 248);
     --yellow: rgb(245, 206, 5);
 
-    --circle-lr: linear-gradient(90deg, rgba(64, 56, 227, 1) 37%, rgba(74, 143, 255, 1) 100%);
-    --action-btn-lr: linear-gradient(180deg, rgba(104, 155, 255, 1) 0%, rgba(74, 134, 255, 1) 100%);
+    --circle-lr: linear-gradient(90deg, var(--main-color) 37%, rgb(95, 9, 250) 100%);
+    --action-btn-lr: linear-gradient(180deg, var(--main-color) 0%, rgb(95, 9, 250) 100%);
 
     --parent-default: 1rem;
     --x-small: .7em;
     --small: .85em;
     --default: 1em;
-    --big:1.5em;
+    --big: 1.5em;
     --x-big: 2em;
     --xx-big: 2.5em;
 }

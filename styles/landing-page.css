@@ -45,6 +45,33 @@ body {
     }
 }
 
+/* ****************************** */
+
+.mb-title {
+    padding: 10px 0;
+
+    font-size: var(--xx-big);
+    width: fit-content;
+    position: relative;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.mb-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: var(--main-color);
+    width: 90%;
+    height: .5rem;
+    border-radius: 5px;
+}
+
+.action-button {}
+
 /* ********************************* */
 
 .div {
@@ -68,14 +95,14 @@ body {
 
 .hero-circle {
     width: 100vw;
-    height: 100vh;
+    height: 100vw;
 
     position: absolute;
-    top: 0;
+    top: -45vw;
     left: 0;
     z-index: -1;
 
-    clip-path: ellipse(80% 80% at 50% 10%);
+    clip-path: ellipse(85% 80% at 50% 10%);
     background-color: var(--main-color);
     background: var(--circle-lr);
 }
@@ -181,7 +208,7 @@ body {
 }
 
 .hero {
-    margin: 100px auto;
+    margin: 80px auto;
     width: 90%;
     height: 100%;
 
@@ -192,7 +219,7 @@ body {
 }
 
 .hero .left {
-    width: 40%;
+    width: 45%;
     color: var(--txt2);
     display: flex;
     flex-direction: column;
@@ -207,8 +234,8 @@ body {
 }
 
 .hero .left p {
-    font-size: var(--default);
-    line-height: 2em;
+    font-size: var(--big);
+    line-height: 1.5em;
     font-weight: 300;
 }
 
@@ -323,7 +350,7 @@ body {
     opacity: 0;
 }
 
-.hero .carousel-item {
+.hero .mb-carousel-item {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -333,7 +360,7 @@ body {
     transition: all 300ms;
 }
 
-.hero .carousel-item img {
+.hero .mb-carousel-item img {
     width: 100%;
     object-fit: contain;
 }
@@ -350,7 +377,7 @@ body {
     left: 100vw;
 }
 
-.hero .carousel-item .circle {
+.hero .mb-carousel-item .circle {
     position: absolute;
     z-index: 2;
 
@@ -370,7 +397,7 @@ body {
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
-.hero .carousel-item .circle1 {
+.hero .mb-carousel-item .circle1 {
     animation: floating 5s ease-in-out infinite;
     animation-delay: 200ms;
 
@@ -378,7 +405,7 @@ body {
     left: -1em;
 }
 
-.hero .carousel-item .circle2 {
+.hero .mb-carousel-item .circle2 {
     animation: floating 6s ease-in-out infinite;
     animation-delay: 200ms;
 
@@ -386,7 +413,7 @@ body {
     left: -2em;
 }
 
-.hero .carousel-item .circle3 {
+.hero .mb-carousel-item .circle3 {
     animation: floating 7s ease-in-out infinite;
     animation-delay: 200ms;
 
@@ -415,7 +442,7 @@ body {
     height: 40px;
 
     position: absolute;
-    top: 80vh;
+    top: 85%;
     left: 50%;
     transform: translate(-50%);
 
@@ -442,7 +469,7 @@ body {
     font-size: var(--parent-default);
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     gap: 5%;
 
@@ -451,35 +478,12 @@ body {
 }
 
 .section1 .left {
-    line-height: var(--x-big);
-    width: 40%;
+    line-height: var(--xx-big);
+    width: 45%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 25px;
-}
-
-.section1 h2 {
-    padding: 5px 0;
-
-    font-size: var(--x-big);
-    width: fit-content;
-    position: relative;
-    text-transform: capitalize;
-    font-weight: 700;
-}
-
-.section1 h2::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    background-color: var(--main-color);
-    width: 90%;
-    height: 5px;
-    border-radius: 5px;
 }
 
 .section1 h2::before {
@@ -496,11 +500,12 @@ body {
 }
 
 .section1 .left p {
-    font-size: var(--default);
+    font-size: var(--big);
+    font-weight: 400;
 }
 
 .learn-more {
-    padding: 5px 20px;
+    padding: .5rem 2rem;
     font-weight: 300;
     font-size: var(--big);
     text-transform: capitalize;
@@ -512,8 +517,8 @@ body {
 }
 
 .section1 .right {
-    width: 30vw;
-    height: 30vw;
+    width: 40%;
+    height: 500px;
 }
 
 .photoshop-effect {
@@ -536,7 +541,7 @@ body {
 }
 
 .tile1 {
-    background-position: 25%;
+    background-position: 23%;
     transform: translateY(-20px);
 
 }
@@ -546,7 +551,7 @@ body {
 }
 
 .tile3 {
-    background-position: 75%;
+    background-position: 76%;
     transform: translateY(-15px);
 }
 
@@ -571,29 +576,6 @@ body {
     gap: 10px;
 }
 
-.section2 h2 {
-    padding: 5px 0;
-
-    font-size: var(--x-big);
-    width: fit-content;
-    position: relative;
-    text-transform: capitalize;
-    font-weight: 700;
-}
-
-.section2 h2::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    background-color: var(--main-color);
-    width: 90%;
-    height: 5px;
-    border-radius: 5px;
-}
-
 .section2 .header p {
     font-size: var(--default);
     word-wrap: normal;
@@ -604,6 +586,7 @@ body {
 .section2 .body {
     width: 100%;
     min-height: 100vh;
+
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -617,11 +600,13 @@ body {
 }
 
 .s2-circle {
-    position: absolute;
-    top: -25px;
-    left: -50vh;
     width: 90vh;
     height: 90vh;
+
+    position: absolute;
+    top: 0;
+    left: -50%;
+
     border-radius: 50%;
     background-color: var(--main-color);
     background: var(--circle-lr);
@@ -740,29 +725,6 @@ body {
     gap: 20px;
 }
 
-.section3 h2 {
-    padding: 5px 0;
-
-    font-size: var(--x-big);
-    width: fit-content;
-    position: relative;
-    text-transform: capitalize;
-    font-weight: 700;
-}
-
-.section3 h2::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    background-color: var(--main-color);
-    width: 90%;
-    height: 5px;
-    border-radius: 5px;
-}
-
 .section3 .partners {
     margin-top: 50px;
     width: 50%;
@@ -868,11 +830,12 @@ body {
 
 .section5 h2 {
     padding: 5px 0;
-    font-size: var(--x-big);
+    font-size: var(--xx-big);
     text-transform: capitalize;
 }
 
 .section5 .circle-container {
+    margin-top: 20px;
     height: 3rem;
     width: fit-content;
     padding: 1.3rem;
@@ -900,11 +863,15 @@ body {
 }
 
 .section5>p {
-    width: 500px;
-    line-height: var(--x-big);
+    margin-top: 20px;
+
+    width: 600px;
+    font-size: var(--big);
+    line-height: var(--big);
 }
 
 .s5-action {
+    margin-top: 50px;
     padding: 10px 20px;
     border-radius: 30px;
 

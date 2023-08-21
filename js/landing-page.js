@@ -40,7 +40,7 @@ window.addEventListener('scroll', function () {
 let radio1 = document.getElementById('image1');
 let radio2 = document.getElementById('image2');
 let radio3 = document.getElementById('image3');
-let carouselItems = document.querySelectorAll('.carousel-item');
+let carouselItems = document.querySelectorAll('.mb-carousel-item');
 
 window.addEventListener('scroll', function () {
     let scrollPosition = window.scrollY;
