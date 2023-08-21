@@ -48,7 +48,7 @@ body {
 /* ********************************* */
 
 .div {
-    height: 150px;
+    height: 25vh;
 }
 
 .div101 {
@@ -405,7 +405,7 @@ body {
 
 .static {
     position: absolute;
-    top: 450px;
+    top: 75vh;
 }
 
 /*  */
@@ -425,6 +425,7 @@ body {
 
     border: 2px solid var(--txt2);
     border-radius: 50%;
+    animation: pulse-animation 3s infinite;
     transition: all 300ms;
 }
 
@@ -433,14 +434,6 @@ body {
     transform: rotate(90deg);
     color: var(--txt2);
     transition: all 300ms;
-}
-
-.go-down:hover {
-    background-color: var(--txt2);
-}
-
-.go-down:hover i {
-    color: var(--main-color);
 }
 
 /* ******************************************** */
@@ -612,6 +605,7 @@ body {
     width: 100%;
     min-height: 100vh;
     display: flex;
+    justify-content: space-between;
     align-items: flex-start;
 }
 
@@ -650,7 +644,7 @@ body {
 
 .section2 .right {
     width: 40%;
-    margin-top: 100px;
+    margin: 100px 5% 0 0;
 
     display: flex;
     flex-direction: column;
@@ -1021,6 +1015,18 @@ body {
     }
 }
 
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 0 0 1rem rgba(255, 255, 255, 0);
+        background-color: rgba(255, 255, 255, 0);
+    }
+}
+
 /* ********************************************************* */
 @media (min-width:1600px) {
     html {
@@ -1041,3 +1047,5 @@ body {
         font-size: 30px;
     }
 }
+
+@media (max-width:1200px) {}

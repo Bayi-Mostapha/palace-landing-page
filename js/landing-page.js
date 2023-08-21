@@ -44,21 +44,22 @@ let carouselItems = document.querySelectorAll('.carousel-item');
 
 window.addEventListener('scroll', function () {
     let scrollPosition = window.scrollY;
-    let viewportHeight = 450;
+    let viewportHeight = this.window.innerHeight;
+    div = 4;
 
-    if (scrollPosition < viewportHeight / 3) {
+    if (scrollPosition < viewportHeight / div) {
         radio1.checked = true;
         carousel();
         document.querySelector('.carousel-wrapper').classList.remove('static');
-    } else if (scrollPosition >= viewportHeight / 3 && scrollPosition < (viewportHeight / 3) * 2) {
+    } else if (scrollPosition >= viewportHeight / div && scrollPosition < (viewportHeight / div) * 2) {
         radio2.checked = true;
         carousel();
         document.querySelector('.carousel-wrapper').classList.remove('static');
-    } else if (scrollPosition >= (viewportHeight / 3) * 2 && scrollPosition < viewportHeight) {
+    } else if (scrollPosition >= (viewportHeight / div) * 2 && scrollPosition < (viewportHeight / div) * 3) {
         radio3.checked = true;
         carousel();
         document.querySelector('.carousel-wrapper').classList.remove('static');
-    } else if (scrollPosition >= viewportHeight) {
+    } else if (scrollPosition >= (viewportHeight / div) * 3) {
         document.querySelector('.carousel-wrapper').classList.add('static');
     }
 });
@@ -93,3 +94,11 @@ ns.forEach(n => {
         n.innerHTML = occ;
     occ++;
 })
+
+// ******************************
+var scrollButton = document.querySelector(".go-down");
+var targetSection = document.getElementById("go-down-dest");
+
+scrollButton.addEventListener("click", function () {
+    targetSection.scrollIntoView({ behavior: "smooth" });
+});
