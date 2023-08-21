@@ -44,7 +44,7 @@ let carouselItems = document.querySelectorAll('.carousel-item');
 
 window.addEventListener('scroll', function () {
     let scrollPosition = window.scrollY;
-    let viewportHeight = window.innerHeight;
+    let viewportHeight = 450;
 
     if (scrollPosition < viewportHeight / 3) {
         radio1.checked = true;
