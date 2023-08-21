@@ -21,7 +21,7 @@ body {
 .loader .circle {
     width: 50px;
     height: 50px;
-    border-radius: 25px;
+    border-radius: 50%;
 
     border-top: 4px solid var(--main-color);
     border-right: 4px solid var(--main-color);
@@ -67,10 +67,8 @@ body {
     background-color: var(--main-color);
     width: 90%;
     height: .5rem;
-    border-radius: 5px;
+    border-radius: 1rem;
 }
-
-.action-button {}
 
 /* ********************************* */
 
@@ -95,14 +93,14 @@ body {
 
 .hero-circle {
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
 
     position: absolute;
-    top: -45vw;
+    top: 0;
     left: 0;
     z-index: -1;
 
-    clip-path: ellipse(85% 80% at 50% 10%);
+    clip-path: ellipse(80% 80% at 50% 15%);
     background-color: var(--main-color);
     background: var(--circle-lr);
 }
@@ -152,8 +150,8 @@ body {
 
 .mb-login {
     text-transform: capitalize;
-    padding: .33em 1em .33em 2.5em;
-    height: 2em;
+    padding: 0 1.2em 0 3em;
+    height: 2.5em;
     overflow: hidden;
 
     position: relative;
@@ -161,7 +159,7 @@ body {
     display: flex;
     align-items: center;
 
-    border-radius: 30px;
+    border-radius: 2rem;
     border: 2px solid var(--txt2);
     color: var(--txt2);
     font-weight: 400;
@@ -169,8 +167,8 @@ body {
 }
 
 .icon {
-    width: 2em;
-    height: 2em;
+    width: 2.5em;
+    height: 2.5em;
 
     position: absolute;
     top: -2px;
@@ -186,29 +184,32 @@ body {
 }
 
 .icon i {
-    font-size: 1.5em;
-    margin-top: 10px;
+    font-size: 1.8em;
+    margin-top: .5em;
 }
 
 .mb-rq {
-    height: 2em;
+    padding: 0 1.5em;
 
-    text-transform: capitalize;
+    height: 2.5em;
+
     background-color: var(--txt2);
     color: var(--main-color);
-    padding: 0 1.1em;
-    border-radius: 30px;
+
+    border-radius: 2rem;
     font-weight: 600;
     font-size: var(--small);
+    text-transform: capitalize;
 }
 
 .mb-rq i {
     margin-right: 5px;
-    font-size: var(--small);
+    font-size: 1rem;
+    transform: rotate(25deg);
 }
 
 .hero {
-    margin: 80px auto;
+    margin: 5rem auto;
     width: 90%;
     height: 100%;
 
@@ -253,7 +254,7 @@ body {
     background-color: var(--txt2);
     color: var(--main-color);
     padding: 8px 15px;
-    border-radius: 30px;
+    border-radius: 2rem;
     font-weight: 600;
 }
 
@@ -273,8 +274,7 @@ body {
     font-size: var(--default);
     margin-top: 15px;
     width: fit-content;
-    height: 40px;
-    padding: 0 20px;
+    padding: 10px 25px;
 
     position: relative;
 
@@ -283,12 +283,13 @@ body {
     gap: 10px;
 
     border: 1px solid var(--txt2);
-    border-radius: 50px;
+    border-radius: 2rem;
 }
 
 .hero .person {
     position: absolute;
-    top: 5px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 30px;
     height: 30px;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
@@ -512,13 +513,14 @@ body {
 
     background-color: var(--main-color);
     background: var(--action-btn-lr);
-    border-radius: 30px;
+    border-radius: 4rem;
     color: var(--txt2);
 }
 
 .section1 .right {
     width: 40%;
-    height: 500px;
+    height: 60vh;
+    min-height: 500px;
 }
 
 .photoshop-effect {
@@ -530,18 +532,18 @@ body {
 }
 
 .mb-tile {
-    width: 32%;
+    width: 30%;
     height: 100%;
     border-radius: 10px;
 
     position: relative;
     background-image: url('../images/Person.jpg');
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: cover;
 }
 
 .tile1 {
-    background-position: 23%;
+    background-position: 20%;
     transform: translateY(-20px);
 
 }
@@ -551,7 +553,7 @@ body {
 }
 
 .tile3 {
-    background-position: 76%;
+    background-position: 80%;
     transform: translateY(-15px);
 }
 
@@ -594,14 +596,14 @@ body {
 
 .section2 .body .left {
     width: 50%;
-    height: 100vh;
+    min-height: 100vh;
 
     position: relative;
 }
 
 .s2-circle {
-    width: 90vh;
-    height: 90vh;
+    width: 50vw;
+    height: 50vw;
 
     position: absolute;
     top: 0;
@@ -613,12 +615,12 @@ body {
 }
 
 .section2 .left .image-container {
-    width: 50vw;
+    width: 55vw;
 
     position: absolute;
     top: 50%;
-    transform: translateY(-60%);
-    left: -5vw;
+    transform: translateY(-50%);
+    left: -30%;
 }
 
 .section2 img {
@@ -628,8 +630,8 @@ body {
 }
 
 .section2 .right {
-    width: 40%;
     margin: 100px 5% 0 0;
+    width: 45%;
 
     display: flex;
     flex-direction: column;
@@ -646,8 +648,9 @@ body {
 
 .feature,
 .feature2 {
+    padding: 0 0 0 1rem;
     text-align: center;
-    height: 3rem;
+    height: 4rem;
 
     position: relative;
 
@@ -655,11 +658,9 @@ body {
     justify-content: center;
     align-items: center;
 
-    border-radius: 50px;
+    border-radius: 2rem;
     border: 2px solid var(--main-color);
     color: var(--txt2);
-    font-weight: 400;
-    font-size: var(--small);
     text-transform: capitalize;
 }
 
@@ -670,8 +671,7 @@ body {
 .feature p,
 .feature2 p {
     font-size: var(--big);
-    font-weight: 300;
-    word-wrap: none;
+    font-weight: 500;
     color: var(--main-color);
 }
 
@@ -680,8 +680,8 @@ body {
 }
 
 .n {
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
 
     position: absolute;
@@ -702,7 +702,7 @@ body {
 .s2-action {
     margin-top: 25px;
     padding: 10px 25px;
-    border-radius: 50px;
+    border-radius: 4rem;
 
     font-size: var(--big);
     background-color: var(--main-color);
@@ -752,11 +752,11 @@ body {
     font-weight: 300;
     text-transform: uppercase;
     border: 1px solid var(--main-color);
-    border-radius: 30px;
+    border-radius: 4rem;
 }
 
 .section3 p {
-    font-size: var(--default);
+    font-size: var(--big);
     color: var(--main-color);
     text-align: center;
 }
@@ -772,8 +772,8 @@ body {
 .s4-circle {
     position: relative;
 
-    width: 90vh;
-    height: 90vh;
+    width: 55vw;
+    height: 55vw;
     border-radius: 50%;
     background-color: var(--main-color);
     background: var(--circle-lr);
@@ -846,7 +846,7 @@ body {
     gap: 10px;
 
     border: 1px solid var(--main-color);
-    border-radius: 50px;
+    border-radius: 4rem;
 }
 
 .section5 .circle-container .circle {
@@ -873,7 +873,7 @@ body {
 .s5-action {
     margin-top: 50px;
     padding: 10px 20px;
-    border-radius: 30px;
+    border-radius: 4rem;
 
     font-size: var(--big);
     background-color: var(--main-color);
