@@ -5,13 +5,13 @@ window.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('hide-overflow')
 });
 
-// ******************************
+// ****************************** Intersection observer
 
 const faders = document.querySelectorAll('.fade-in');
-const appearOptions = {
-    threshold: 0.5
-};
 
+const appearOptions = {
+    threshold: 0.2
+};
 const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
@@ -22,10 +22,6 @@ const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
     });
 }, appearOptions);
 
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-});
-
 window.addEventListener('scroll', function () {
     if (window.scrollY === 0) {
         faders.forEach(fader => {
@@ -35,6 +31,24 @@ window.addEventListener('scroll', function () {
     }
 });
 
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+// *********************************************
+const images = document.querySelectorAll('.hero .mb-carousel-item');
+
+function updateImgHeightVariable() {
+    images.forEach(image => {
+        const heroImg = image.querySelector('img').offsetHeight;
+        const halfCircle = image.querySelector('.circle2').offsetHeight / 2;
+        document.documentElement.style.setProperty('--img-height', (heroImg - halfCircle) + 'px');
+    });
+}
+
+updateImgHeightVariable();
+window.addEventListener('resize', updateImgHeightVariable);
+
+
 // *********************************************
 
 let radio1 = document.getElementById('image1');
@@ -42,27 +56,9 @@ let radio2 = document.getElementById('image2');
 let radio3 = document.getElementById('image3');
 let carouselItems = document.querySelectorAll('.mb-carousel-item');
 
-window.addEventListener('scroll', function () {
-    let scrollPosition = window.scrollY;
-    let viewportHeight = this.window.innerHeight;
-    div = 4;
-
-    if (scrollPosition < viewportHeight / div) {
-        radio1.checked = true;
-        carousel();
-        document.querySelector('.carousel-wrapper').classList.remove('static');
-    } else if (scrollPosition >= viewportHeight / div && scrollPosition < (viewportHeight / div) * 2) {
-        radio2.checked = true;
-        carousel();
-        document.querySelector('.carousel-wrapper').classList.remove('static');
-    } else if (scrollPosition >= (viewportHeight / div) * 2 && scrollPosition < (viewportHeight / div) * 3) {
-        radio3.checked = true;
-        carousel();
-        document.querySelector('.carousel-wrapper').classList.remove('static');
-    } else if (scrollPosition >= (viewportHeight / div) * 3) {
-        document.querySelector('.carousel-wrapper').classList.add('static');
-    }
-});
+carouselLogic();
+window.addEventListener('scroll', carouselLogic);
+window.addEventListener('resize', carouselLogic);
 
 function carousel() {
     if (radio1.checked) {
@@ -82,7 +78,34 @@ function carousel() {
         });
     }
 }
+function carouselLogic() {
+    let scrollPosition = window.scrollY;
+    let viewportHeight = window.innerHeight;
+    let div = 4;
 
+    if (viewportHeight > 800) {
+        document.documentElement.style.setProperty('--div-height', 200 + 'px');
+        viewportHeight = 800;
+    } else {
+        document.documentElement.style.setProperty('--div-height', 25 + 'vh');
+    }
+
+    if (scrollPosition < viewportHeight / div) {
+        radio1.checked = true;
+        carousel();
+        document.querySelector('.carousel-wrapper').classList.remove('static');
+    } else if (scrollPosition >= viewportHeight / div && scrollPosition < (viewportHeight / div) * 2) {
+        radio2.checked = true;
+        carousel();
+        document.querySelector('.carousel-wrapper').classList.remove('static');
+    } else if (scrollPosition >= (viewportHeight / div) * 2 && scrollPosition < (viewportHeight / div) * 3) {
+        radio3.checked = true;
+        carousel();
+        document.querySelector('.carousel-wrapper').classList.remove('static');
+    } else if (scrollPosition >= (viewportHeight / div) * 3) {
+        document.querySelector('.carousel-wrapper').classList.add('static');
+    }
+}
 // *********************************************
 const ns = document.querySelectorAll('.n');
 let occ = 1;
@@ -96,8 +119,9 @@ ns.forEach(n => {
 })
 
 // ******************************
-var scrollButton = document.querySelector(".go-down");
-var targetSection = document.getElementById("go-down-dest");
+
+const scrollButton = document.querySelector(".go-down");
+const targetSection = document.getElementById("go-down-dest"); //dest = destination
 
 scrollButton.addEventListener("click", function () {
     targetSection.scrollIntoView({ behavior: "smooth" });

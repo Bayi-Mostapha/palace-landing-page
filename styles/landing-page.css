@@ -1,3 +1,8 @@
+:root {
+    --img-height: 0;
+    --div-height: 25vh;
+}
+
 body {
     background-color: white;
     overflow-x: hidden !important;
@@ -73,18 +78,19 @@ body {
 /* ********************************* */
 
 .div {
-    height: 25vh;
+    height: var(--div-height);
 }
 
 .div101 {
     height: 100vh;
+    min-height: 700px;
 }
 
 .carousel-wrapper {
     font-size: var(--parent-default);
     width: 100vw;
     height: 100vh;
-
+    min-height: 700px;
 
     overflow: hidden;
     position: fixed;
@@ -94,13 +100,14 @@ body {
 .hero-circle {
     width: 100vw;
     height: 100vh;
+    min-height: 680px;
 
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
 
-    clip-path: ellipse(80% 80% at 50% 15%);
+    clip-path: ellipse(80% 85% at 50% 7%);
     background-color: var(--main-color);
     background: var(--circle-lr);
 }
@@ -145,7 +152,7 @@ body {
 .btns {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 1rem;
 }
 
 .mb-login {
@@ -209,14 +216,15 @@ body {
 }
 
 .hero {
-    margin: 5rem auto;
+    margin: 0 auto;
+    margin-top: 6rem;
     width: 90%;
     height: 100%;
 
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 30px;
+    gap: 2.2rem;
 }
 
 .hero .left {
@@ -236,7 +244,7 @@ body {
 
 .hero .left p {
     font-size: var(--big);
-    line-height: 1.5em;
+    line-height: 1.1em;
     font-weight: 300;
 }
 
@@ -253,7 +261,7 @@ body {
     text-transform: capitalize;
     background-color: var(--txt2);
     color: var(--main-color);
-    padding: 8px 15px;
+    padding: .4em 1em;
     border-radius: 2rem;
     font-weight: 600;
 }
@@ -274,7 +282,7 @@ body {
     font-size: var(--default);
     margin-top: 15px;
     width: fit-content;
-    padding: 10px 25px;
+    padding: .4em 1.5em;
 
     position: relative;
 
@@ -290,33 +298,32 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    width: 1.8rem;
+    height: 1.8rem;
 }
 
 .hero .person1 {
-    left: 20px;
+    left: 1rem;
     z-index: 1;
 }
 
 .hero .person2 {
-    left: 35px;
+    left: 2rem;
     z-index: 2;
 }
 
 .hero .person3 {
-    left: 55px;
+    left: 3rem;
     z-index: 3;
 }
 
 .hero .person4 {
-    left: 75px;
+    left: 4rem;
     z-index: 4;
 }
 
 .hero .stars {
-    margin-left: 105px;
+    margin-left: 5rem;
     color: var(--yellow);
 }
 
@@ -353,7 +360,6 @@ body {
 
 .hero .mb-carousel-item {
     width: 100%;
-    height: 100%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -367,15 +373,15 @@ body {
 }
 
 #carousel-item1 {
-    left: 100vw;
+    left: 150vw;
 }
 
 #carousel-item2 {
-    left: 100vw;
+    left: 150vw;
 }
 
 #carousel-item3 {
-    left: 100vw;
+    left: 150vw;
 }
 
 .hero .mb-carousel-item .circle {
@@ -395,7 +401,7 @@ body {
     font-weight: bold;
     color: var(--main-color);
     text-transform: uppercase;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    box-shadow: var(--light-border);
 }
 
 .hero .mb-carousel-item .circle1 {
@@ -410,7 +416,7 @@ body {
     animation: floating 6s ease-in-out infinite;
     animation-delay: 200ms;
 
-    top: 90%;
+    top: var(--img-height);
     left: -2em;
 }
 
@@ -427,38 +433,39 @@ body {
 }
 
 .visible img {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: var(--bold-shadow);
     animation: floating 4s ease-in-out infinite;
 }
 
 .static {
     position: absolute;
-    top: 75vh;
+    top: calc(var(--div-height)*3);
 }
 
 /*  */
 
 .go-down {
-    width: 40px;
-    height: 40px;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
 
     position: absolute;
-    top: 85%;
+    bottom: 13%;
     left: 50%;
-    transform: translate(-50%);
+    transform: translateX(-50%);
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     border: 2px solid var(--txt2);
-    border-radius: 50%;
     animation: pulse-animation 3s infinite;
+    cursor: pointer;
     transition: all 300ms;
 }
 
 .go-down i {
-    font-size: 20px;
+    font-size: 1rem;
     transform: rotate(90deg);
     color: var(--txt2);
     transition: all 300ms;
@@ -468,14 +475,16 @@ body {
 
 .section1 {
     font-size: var(--parent-default);
+    margin-top: 50px;
     min-height: 100vh;
+
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     gap: 5%;
 
     overflow-x: hidden;
-    margin-top: 50px;
+    overflow-y: visible;
 }
 
 .section1 .left {
@@ -532,7 +541,7 @@ body {
 }
 
 .mb-tile {
-    width: 30%;
+    width: 32%;
     height: 100%;
     border-radius: 10px;
 
@@ -559,8 +568,11 @@ body {
 
 /* ******************************************** */
 .section2 {
-    font-size: var(--parent-default);
     margin-top: 150px;
+
+    font-size: var(--parent-default);
+
+    overflow: hidden;
 
     display: flex;
     flex-direction: column;
@@ -579,35 +591,38 @@ body {
 }
 
 .section2 .header p {
-    font-size: var(--default);
+    margin-top: 1rem;
+    font-size: var(--big);
+    line-height: 2.5rem;
     word-wrap: normal;
     text-align: center;
-    width: 400px;
+    width: 600px;
 }
 
 .section2 .body {
     width: 100%;
-    min-height: 100vh;
+    min-height: 52rem;
 
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .section2 .body .left {
+    align-self: flex-start;
     width: 50%;
-    min-height: 100vh;
+    height: 100%;
 
     position: relative;
 }
 
 .s2-circle {
-    width: 50vw;
-    height: 50vw;
+    width: 50rem;
+    height: 50rem;
 
     position: absolute;
     top: 0;
-    left: -50%;
+    left: -25rem;
 
     border-radius: 50%;
     background-color: var(--main-color);
@@ -615,22 +630,24 @@ body {
 }
 
 .section2 .left .image-container {
-    width: 55vw;
+    width: 100%;
+    height: 60%;
 
     position: absolute;
+    left: 0;
     top: 50%;
     transform: translateY(-50%);
-    left: -30%;
 }
 
 .section2 img {
-    width: 100%;
+    height: 100%;
+    border-radius: 10px;
     object-fit: contain;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    box-shadow: var(--normal-shadow);
 }
 
 .section2 .right {
-    margin: 100px 5% 0 0;
+    margin-right: 4%;
     width: 45%;
 
     display: flex;
@@ -640,7 +657,7 @@ body {
 }
 
 .features {
-    width: 100%;
+    width: 95%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
@@ -650,7 +667,7 @@ body {
 .feature2 {
     padding: 0 0 0 1rem;
     text-align: center;
-    height: 4rem;
+    height: 3.5rem;
 
     position: relative;
 
@@ -680,8 +697,8 @@ body {
 }
 
 .n {
-    width: 4rem;
-    height: 4rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
 
     position: absolute;
@@ -716,11 +733,12 @@ body {
 
 .section3 {
     font-size: var(--parent-default);
-    margin: 150px auto;
-    width: 90%;
+    width: 100%;
+    min-height: 100vh;
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 20px;
 }
@@ -764,17 +782,18 @@ body {
 /* ******************************************** */
 .section4 {
     font: var(--parent-default);
+
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .s4-circle {
-    position: relative;
-
-    width: 55vw;
-    height: 55vw;
+    width: 37.5rem;
+    height: 37.5rem;
     border-radius: 50%;
+
+    position: relative;
     background-color: var(--main-color);
     background: var(--circle-lr);
 }
@@ -787,8 +806,9 @@ body {
 .section4 .image-container img {
     width: 100%;
     object-fit: contain;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-    border-radius: 10px;
+    box-shadow: var(--bold-shadow), var(--light-shadow);
+    border-radius: 7px;
+    transition: all 300ms;
 }
 
 .section4 .screen1 {
@@ -820,10 +840,12 @@ body {
     font-size: var(--parent-default);
     margin: 100px auto;
     width: 50%;
+    min-height: 100vh;
 
     text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 10px;
 }
@@ -865,7 +887,7 @@ body {
 .section5>p {
     margin-top: 20px;
 
-    width: 600px;
+    width: 80%;
     font-size: var(--big);
     line-height: var(--big);
 }
@@ -898,8 +920,7 @@ body {
 }
 
 .fade-in {
-    opacity: 0.5;
-    filter: grayscale(1);
+    opacity: 0.3;
     transition: opacity 400ms ease-in, filter 400ms ease-in, transform 800ms ease-in;
 }
 
@@ -1000,12 +1021,8 @@ body {
         font-size: 24px;
     }
 
-    .lp-navbar {
-        width: 1600px;
-    }
-
     .section2 .header p {
-        width: 600px;
+        width: 1200px;
     }
 }
 
@@ -1015,4 +1032,10 @@ body {
     }
 }
 
-@media (max-width:1200px) {}
+@media (max-width:1000px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width:850px) {}
