@@ -39,6 +39,8 @@ faders.forEach(fader => {
 // ********************************************* Hero height
 
 function updateHeroHeight() {
+    const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const oneRemInPixels = rootFontSize;
 
     // hero 
 
@@ -48,11 +50,15 @@ function updateHeroHeight() {
     const leftHeight = Math.ceil(hero_left.offsetHeight);
     const navHeight = Math.ceil(nav_bar.offsetHeight);
 
-    document.documentElement.style.setProperty('--mb-carousel-height', `calc(${navHeight + leftHeight + Math.round(leftHeight / 4)}px + 21rem)`);
-    document.documentElement.style.setProperty('--mb-hero-circle-height', `calc(${navHeight + leftHeight + Math.round(leftHeight / 4)}px + 21rem)`);
-    document.documentElement.style.setProperty('--mb-hero-height', `calc(${leftHeight + Math.round(leftHeight / 4)}px + 4rem)`);
+    console.log(window.innerHeight)
+    console.log(navHeight + leftHeight + Math.round(leftHeight / 4) + 21 * oneRemInPixels)
+
+    document.documentElement.style.setProperty('--mb-carousel-height', `calc(${navHeight + leftHeight + Math.round(leftHeight / 4)}px + 18rem)`);
+    document.documentElement.style.setProperty('--mb-hero-circle-height', `calc(${navHeight + leftHeight + Math.round(leftHeight / 4)}px + 18rem)`);
+    document.documentElement.style.setProperty('--mb-hero-height', `calc(${leftHeight}px + 5rem)`);
     document.documentElement.style.setProperty('--mb-hero-left-height', `${leftHeight}px`);
-    document.documentElement.style.setProperty('--mb-hero-right-height', `${leftHeight + Math.round(leftHeight / 4)}px`);
+    document.documentElement.style.setProperty('--mb-hero-right-height', `calc(${leftHeight}px + 4rem)`);
+    document.documentElement.style.setProperty('--go-down-pos', `calc(${navHeight + leftHeight}px + 12rem)`);
 
     // section 1
 

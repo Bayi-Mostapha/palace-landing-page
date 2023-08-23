@@ -6,6 +6,7 @@
     --mb-hero-height: 100%;
     --mb-hero-right-height: 45%;
     --section1-height: auto;
+    --go-down-pos: 90%;
 }
 
 body {
@@ -118,23 +119,34 @@ body {
 
 .lp-navbar {
     font-size: var(--default);
-    margin: 2rem auto;
+    margin: 1rem auto;
     width: 90%;
-    padding: .8rem 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
 .logo {
+
+    /* font  */
+
     font-size: var(--big);
     text-transform: uppercase;
     font-weight: 500;
     color: var(--txt2);
+
+    /* image  */
+
+    height: 6rem;
+}
+
+.logo img {
+    height: 100%;
+    object-fit: contain;
 }
 
 .lp-navlinks {
-    width: 50%;
+    width: 40%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -220,7 +232,7 @@ body {
 }
 
 .hero {
-    margin: 5rem auto 0 auto;
+    margin: 3rem auto 0 auto;
     width: 90%;
     height: var(--mb-hero-height);
     display: flex;
@@ -456,7 +468,7 @@ body {
     border-radius: 50%;
 
     position: absolute;
-    bottom: 13%;
+    top: var(--go-down-pos);
     left: 50%;
     transform: translateX(-50%);
 
