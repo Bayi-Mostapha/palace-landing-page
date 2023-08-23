@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
 
 :root {
     --txt: black;
@@ -16,6 +16,7 @@
     --x-small: .7em;
     --small: .85em;
     --default: 1em;
+    --default-big: 1.2em;
     --big: 1.5em;
     --x-big: 2em;
     --xx-big: 2.5em;
@@ -78,7 +79,7 @@ select {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 /* ********************************************************************* */
