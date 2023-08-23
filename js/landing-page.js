@@ -12,6 +12,7 @@ const faders = document.querySelectorAll('.fade-in');
 const appearOptions = {
     threshold: 0.2
 };
+
 const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
@@ -34,7 +35,38 @@ window.addEventListener('scroll', function () {
 faders.forEach(fader => {
     appearOnScroll.observe(fader);
 });
+
+// ********************************************* Hero height
+
+function updateHeroHeight() {
+
+    // hero 
+
+    const nav_bar = document.querySelector('.lp-navbar');
+    const hero_left = document.querySelector('.hero .left');
+
+    const leftHeight = Math.ceil(hero_left.offsetHeight);
+    const navHeight = Math.ceil(nav_bar.offsetHeight);
+
+    document.documentElement.style.setProperty('--mb-carousel-height', `calc(${navHeight + leftHeight + Math.round(leftHeight / 4)}px + 21rem)`);
+    document.documentElement.style.setProperty('--mb-hero-circle-height', `calc(${navHeight + leftHeight + Math.round(leftHeight / 4)}px + 21rem)`);
+    document.documentElement.style.setProperty('--mb-hero-height', `calc(${leftHeight + Math.round(leftHeight / 4)}px + 4rem)`);
+    document.documentElement.style.setProperty('--mb-hero-left-height', `${leftHeight}px`);
+    document.documentElement.style.setProperty('--mb-hero-right-height', `${leftHeight + Math.round(leftHeight / 4)}px`);
+
+    // section 1
+
+    const section1_left = document.querySelector('.section1 .left').offsetHeight;
+
+    document.documentElement.style.setProperty('--section1-height', `calc(${section1_left}px + 25px)`);
+}
+
+updateHeroHeight();
+window.addEventListener('resize', updateHeroHeight);
+
+
 // *********************************************
+
 const images = document.querySelectorAll('.hero .mb-carousel-item');
 
 function updateImgHeightVariable() {
@@ -106,7 +138,18 @@ function carouselLogic() {
         document.querySelector('.carousel-wrapper').classList.add('static');
     }
 }
-// *********************************************
+
+// ******************************
+
+const scrollButton = document.querySelector(".go-down");
+const targetSection = document.getElementById("go-down-dest"); //dest = destination
+
+scrollButton.addEventListener("click", function () {
+    targetSection.scrollIntoView({ behavior: "smooth" });
+});
+
+// ******************************
+
 const ns = document.querySelectorAll('.n');
 let occ = 1;
 
@@ -116,13 +159,4 @@ ns.forEach(n => {
     else
         n.innerHTML = occ;
     occ++;
-})
-
-// ******************************
-
-const scrollButton = document.querySelector(".go-down");
-const targetSection = document.getElementById("go-down-dest"); //dest = destination
-
-scrollButton.addEventListener("click", function () {
-    targetSection.scrollIntoView({ behavior: "smooth" });
 });

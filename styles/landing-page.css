@@ -1,6 +1,11 @@
 :root {
     --img-height: 0;
     --div-height: 25vh;
+    --mb-carousel-height: max(100vh, 700px);
+    --mb-hero-circle-height: max(100vh, 700px);
+    --mb-hero-height: 100%;
+    --mb-hero-right-height: 45%;
+    --section1-height: auto;
 }
 
 body {
@@ -82,15 +87,15 @@ body {
 }
 
 .div101 {
-    height: 100vh;
-    min-height: max(700px, 50vw);
+    height: var(--mb-carousel-height);
 }
+
+/*  */
 
 .carousel-wrapper {
     font-size: var(--parent-default);
     width: 100vw;
-    height: 100vh;
-    min-height: max(700px, 50vw);
+    height: var(--mb-carousel-height);
 
     overflow: hidden;
     position: fixed;
@@ -99,8 +104,7 @@ body {
 
 .hero-circle {
     width: 100%;
-    height: 100%;
-    min-height: max(700px, 50vw);
+    height: var(--mb-hero-circle-height);
 
     position: absolute;
     top: 0;
@@ -114,9 +118,9 @@ body {
 
 .lp-navbar {
     font-size: var(--default);
-    margin: 25px auto;
+    margin: 2rem auto;
     width: 90%;
-    padding: 10px 0;
+    padding: .8rem 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -216,10 +220,9 @@ body {
 }
 
 .hero {
-    margin: 5% auto 0 auto;
+    margin: 5rem auto 0 auto;
     width: 90%;
-    height: 100%;
-
+    height: var(--mb-hero-height);
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -228,7 +231,6 @@ body {
 
 .hero .left {
     width: 45%;
-    margin-top: 3%;
 
     color: var(--txt2);
 
@@ -239,12 +241,13 @@ body {
 }
 
 .main-mb-title {
+    white-space: nowrap;
     text-transform: capitalize;
     font-size: var(--x-big);
     font-weight: 800;
 }
 
-.hero .left p {
+.hero .left>p {
     font-size: var(--big);
     line-height: 1.1em;
     font-weight: 300;
@@ -343,7 +346,7 @@ body {
 
 .hero .right {
     width: 45%;
-    height: 45%;
+    height: var(--mb-hero-right-height);
 
     position: relative;
 }
@@ -442,7 +445,7 @@ body {
 
 .static {
     position: absolute;
-    top: calc(var(--div-height)*3);
+    top: calc(var(--div-height) * 3);
 }
 
 /*  */
@@ -477,7 +480,7 @@ body {
 /* ******************************************** */
 
 .section1 {
-    min-height: max(100vh,50rem);
+    min-height: var(--section1-height);
     font-size: var(--parent-default);
     margin-top: 50px;
 
@@ -577,7 +580,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: .9rem;
 }
 
 .section2 .header {
