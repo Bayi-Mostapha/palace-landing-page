@@ -7,6 +7,7 @@
     --mb-hero-right-height: 45%;
     --section1-height: auto;
     --go-down-pos: 90%;
+    --s2-body-height: 52rem;
 }
 
 body {
@@ -624,7 +625,7 @@ body {
 
 .section2 .body {
     width: 100%;
-    min-height: 52rem;
+    min-height: var(--s2-body-height);
 
     display: flex;
     justify-content: center;
@@ -637,7 +638,7 @@ body {
     justify-self: flex-start;
     align-self: flex-start;
     width: 46%;
-    height: 100%;
+    height: 50rem;
 
     position: relative;
 }
@@ -782,6 +783,7 @@ body {
 .section3 .partners .row1,
 .section3 .partners .row2 {
     width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1078,9 +1080,44 @@ body {
     }
 }
 
+@media (max-width:1000px) {
+    .section1 {
+        flex-direction: column;
+    }
+
+    .section1 .left,
+    .section1 .right {
+        width: 60%;
+    }
+}
+
+@media (max-width:900px) {
+    .section2 .body {
+        flex-direction: column;
+    }
+
+    .section2 .body .left .image-container {
+        transform: translateX(15rem);
+    }
+
+    .section2 .body .right {
+        width: 60%;
+    }
+}
+
 @media (max-width:850px) {
     .lp-navbar {
         width: 95%;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .hero .left,
+    .hero .right {
+        width: 60%;
     }
 }
 
@@ -1191,5 +1228,53 @@ body {
     .lp-nav-btn.navbar-shown .mb-bar:nth-child(3) {
         transform: translateY(-10px) rotate(-45deg);
         background-color: var(--main-color);
+    }
+    .section2 .body .left .image-container {
+        transform: translateX(10rem);
+    }
+
+    .section2 .body .right {
+        width: 70%;
+    }
+}
+
+@media (max-width:650px) {
+
+    .hero .left,
+    .hero .right {
+        width: 80%;
+    }
+    .section2 .body .left .image-container {
+        transform: translateX(5rem);
+    }
+
+    .section2 .body .right {
+        width: 80%;
+    }
+    .section3 .partners .row1,
+    .section3 .partners .row2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .row2 .partner:last-child {
+        grid-column: span 2;
+    }
+
+    .s4-circle {
+        width: 90vw;
+        height: 90vw;
+    }
+}
+
+@media (max-width:325px) {
+
+    .section3 .partners .row1,
+    .section3 .partners .row2 {
+        grid-template-columns: 1fr;
+    }
+
+    .row2 .partner:last-child {
+        grid-column: span 1;
     }
 }

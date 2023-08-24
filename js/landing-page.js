@@ -1,3 +1,7 @@
+const root = document.documentElement;
+
+// ************************************************
+
 var loader = document.querySelector('.loader');
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -38,10 +42,8 @@ mobileNavBtn.addEventListener('click', () => {
 // ********************************************* Hero height
 
 function updateHeroHeight() {
-    const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const rootFontSize = parseFloat(getComputedStyle(root).fontSize);
     const oneRemInPixels = rootFontSize;
-
-    // hero 
 
     const nav_bar = document.querySelector('.lp-navbar');
     const hero_left = document.querySelector('.hero .left');
@@ -49,21 +51,36 @@ function updateHeroHeight() {
     const leftHeight = Math.ceil(hero_left.offsetHeight);
     const navHeight = Math.ceil(nav_bar.offsetHeight);
 
-    console.log(window.innerHeight)
-    console.log(navHeight + leftHeight + Math.round(leftHeight / 4) + 21 * oneRemInPixels)
-
-    document.documentElement.style.setProperty('--mb-carousel-height', `calc(${navHeight + leftHeight + Math.round(leftHeight / 4)}px + 18rem)`);
-    document.documentElement.style.setProperty('--mb-hero-circle-height', `calc(${navHeight + leftHeight + Math.round(leftHeight / 4)}px + 18rem)`);
-    document.documentElement.style.setProperty('--mb-hero-height', `calc(${leftHeight}px + 5rem)`);
-    document.documentElement.style.setProperty('--mb-hero-left-height', `${leftHeight}px`);
-    document.documentElement.style.setProperty('--mb-hero-right-height', `calc(${leftHeight}px + 4rem)`);
-    document.documentElement.style.setProperty('--go-down-pos', `calc(${navHeight + leftHeight}px + 12rem)`);
-
-    // section 1
+    if (window.innerWidth > 850) {
+        root.style.setProperty('--mb-carousel-height', `calc(${navHeight + leftHeight + Math.round(leftHeight / 4)}px + 18rem)`);
+        root.style.setProperty('--mb-hero-circle-height', `calc(${navHeight + leftHeight + Math.round(leftHeight / 4)}px + 18rem)`);
+        root.style.setProperty('--mb-hero-height', `calc(${leftHeight}px + 5rem)`);
+        root.style.setProperty('--mb-hero-left-height', `${leftHeight}px`);
+        root.style.setProperty('--mb-hero-right-height', `calc(${leftHeight}px + 4rem)`);
+        root.style.setProperty('--go-down-pos', `calc(${navHeight + leftHeight}px + 12rem)`);
+    } else {
+        root.style.setProperty('--mb-carousel-height', `calc(${navHeight + leftHeight * 2 + Math.round(leftHeight / 4)}px + 18rem)`);
+        root.style.setProperty('--mb-hero-circle-height', `calc(${navHeight + leftHeight * 2 + Math.round(leftHeight / 4)}px + 18rem)`);
+        root.style.setProperty('--mb-hero-height', `calc(${leftHeight * 2}px + 5rem)`);
+        root.style.setProperty('--mb-hero-left-height', `${leftHeight}px`);
+        root.style.setProperty('--mb-hero-right-height', `calc(${leftHeight}px + 4rem)`);
+        root.style.setProperty('--go-down-pos', `calc(${navHeight + leftHeight * 2}px + 12rem)`);
+    }
 
     const section1_left = document.querySelector('.section1 .left').offsetHeight;
 
-    document.documentElement.style.setProperty('--section1-height', `calc(${section1_left}px + 25px)`);
+    if (window.innerWidth > 1000) {
+        root.style.setProperty('--section1-height', `calc(${section1_left}px + 25px)`);
+    } else {
+        root.style.setProperty('--section1-height', `calc(${section1_left * 2}px + 55px)`);
+    }
+
+    const section2_right = document.querySelector('.section2 .body .right').offsetHeight;
+    if (window.innerWidth > 900) {
+        root.style.setProperty('--s2-body-height', 52 + 'rem');
+    } else {
+        root.style.setProperty('--s2-body-height', `calc(${section2_right}px + 55rem)`);
+    }
 }
 
 updateHeroHeight();
@@ -77,7 +94,7 @@ function updateImgHeightVariable() {
     images.forEach(image => {
         const heroImg = image.querySelector('img').offsetHeight;
         const halfCircle = image.querySelector('.circle2').offsetHeight / 2;
-        document.documentElement.style.setProperty('--img-height', (heroImg - halfCircle) + 'px');
+        root.style.setProperty('--img-height', (heroImg - halfCircle) + 'px');
     });
 }
 
@@ -114,10 +131,10 @@ function carouselLogic() {
     let div = 4;
 
     if (viewportHeight > 800) {
-        document.documentElement.style.setProperty('--div-height', 200 + 'px');
+        root.style.setProperty('--div-height', 200 + 'px');
         viewportHeight = 800;
     } else {
-        document.documentElement.style.setProperty('--div-height', 25 + 'vh');
+        root.style.setProperty('--div-height', 25 + 'vh');
     }
 
     if (scrollPosition < viewportHeight / div) {
