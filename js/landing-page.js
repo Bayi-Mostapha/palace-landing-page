@@ -16,24 +16,23 @@ const appearOptions = {
 const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
-            return
+            return;
         }
         entry.target.classList.add('appear');
         appearOnScroll.unobserve(entry.target);
     });
 }, appearOptions);
 
-window.addEventListener('scroll', function () {
-    if (window.scrollY === 0) {
-        faders.forEach(fader => {
-            fader.classList.remove('appear');
-            appearOnScroll.observe(fader);
-        })
-    }
-});
-
 faders.forEach(fader => {
     appearOnScroll.observe(fader);
+});
+
+// *********************************************
+
+const mobileNavBtn = document.querySelector('.lp-nav-btn');
+mobileNavBtn.addEventListener('click', () => {
+    document.querySelector('.lp-mobile-nav').classList.toggle('shown');
+    mobileNavBtn.classList.toggle('navbar-shown');
 });
 
 // ********************************************* Hero height
@@ -68,7 +67,6 @@ function updateHeroHeight() {
 }
 
 updateHeroHeight();
-window.addEventListener('resize', updateHeroHeight);
 
 
 // *********************************************
@@ -84,8 +82,6 @@ function updateImgHeightVariable() {
 }
 
 updateImgHeightVariable();
-window.addEventListener('resize', updateImgHeightVariable);
-
 
 // *********************************************
 
@@ -93,10 +89,6 @@ let radio1 = document.getElementById('image1');
 let radio2 = document.getElementById('image2');
 let radio3 = document.getElementById('image3');
 let carouselItems = document.querySelectorAll('.mb-carousel-item');
-
-carouselLogic();
-window.addEventListener('scroll', carouselLogic);
-window.addEventListener('resize', carouselLogic);
 
 function carousel() {
     if (radio1.checked) {
@@ -130,20 +122,31 @@ function carouselLogic() {
 
     if (scrollPosition < viewportHeight / div) {
         radio1.checked = true;
+        radio2.checked = false;
+        radio3.checked = false;
         carousel();
         document.querySelector('.carousel-wrapper').classList.remove('static');
     } else if (scrollPosition >= viewportHeight / div && scrollPosition < (viewportHeight / div) * 2) {
+        radio1.checked = false;
         radio2.checked = true;
+        radio3.checked = false;
         carousel();
         document.querySelector('.carousel-wrapper').classList.remove('static');
     } else if (scrollPosition >= (viewportHeight / div) * 2 && scrollPosition < (viewportHeight / div) * 3) {
+        radio1.checked = false;
+        radio2.checked = false;
         radio3.checked = true;
         carousel();
         document.querySelector('.carousel-wrapper').classList.remove('static');
     } else if (scrollPosition >= (viewportHeight / div) * 3) {
+        radio1.checked = false;
+        radio2.checked = false;
+        radio3.checked = true;
+        carousel();
         document.querySelector('.carousel-wrapper').classList.add('static');
     }
 }
+carouselLogic();
 
 // ******************************
 
@@ -165,4 +168,26 @@ ns.forEach(n => {
     else
         n.innerHTML = occ;
     occ++;
+});
+
+// *****************************
+
+// resize event 
+
+window.addEventListener('resize', () => {
+    updateImgHeightVariable();
+    updateHeroHeight();
+    carouselLogic();
+});
+
+// scroll event
+
+window.addEventListener('scroll', function () {
+    if (window.scrollY === 0) {
+        faders.forEach(fader => {
+            fader.classList.remove('appear');
+            appearOnScroll.observe(fader);
+        });
+    }
+    carouselLogic();
 });
