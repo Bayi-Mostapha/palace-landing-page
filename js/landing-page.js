@@ -6,7 +6,7 @@ var loader = document.querySelector('.loader');
 
 window.addEventListener('DOMContentLoaded', () => {
     loader.style.display = 'none';
-    document.body.classList.remove('hide-overflow')
+    document.body.classList.remove('hide-overflow');
 });
 
 // ****************************** Intersection observer
@@ -34,9 +34,17 @@ faders.forEach(fader => {
 // *********************************************
 
 const mobileNavBtn = document.querySelector('.lp-nav-btn');
+const mobileNav = document.querySelector('.lp-mobile-nav');
 mobileNavBtn.addEventListener('click', () => {
-    document.querySelector('.lp-mobile-nav').classList.toggle('shown');
-    mobileNavBtn.classList.toggle('navbar-shown');
+    if (!mobileNav.classList.contains('shown')) {
+        mobileNav.classList.add('shown');
+        mobileNavBtn.classList.add('navbar-shown');
+        document.body.classList.add('hide-overflow');
+    } else {
+        mobileNav.classList.remove('shown');
+        mobileNavBtn.classList.remove('navbar-shown');
+        document.body.classList.remove('hide-overflow');
+    }
 });
 
 // ********************************************* Hero height
@@ -195,6 +203,11 @@ window.addEventListener('resize', () => {
     updateImgHeightVariable();
     updateHeroHeight();
     carouselLogic();
+    if (window.innerWidth > 750 && mobileNav.classList.contains('shown')) {
+        mobileNav.classList.remove('shown');
+        mobileNavBtn.classList.remove('navbar-shown');
+        document.body.classList.remove('hide-overflow');
+    }
 });
 
 // scroll event

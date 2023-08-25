@@ -17,6 +17,7 @@ body {
 }
 
 /* ************************************* */
+
 .loader {
     background-color: white;
     height: 100dvh;
@@ -60,13 +61,14 @@ body {
 /* ****************************** */
 
 .mb-title {
-    padding: 10px 0;
+    padding: 0 0 10px 0;
 
     font-size: var(--xx-big);
     width: fit-content;
     position: relative;
     text-transform: capitalize;
     font-weight: 800 !important;
+    white-space: nowrap;
 }
 
 .mb-title::after {
@@ -113,7 +115,7 @@ body {
     left: 0;
     z-index: -1;
 
-    clip-path: ellipse(80% 85% at 50% 7%);
+    clip-path: ellipse(80% 80% at 50% 8%);
     background-color: var(--main-color);
     background: var(--circle-lr);
 }
@@ -128,7 +130,7 @@ body {
 
 .lp-navbar {
     font-size: var(--default);
-    margin: 1rem auto;
+    margin: 1rem auto 0 auto;
     width: 90%;
     display: flex;
     justify-content: space-around;
@@ -247,7 +249,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 2.2rem;
+    gap: 2.3rem;
 }
 
 .hero .left {
@@ -373,16 +375,16 @@ body {
 }
 
 .hero .inputs {
-    width: .1px;
-    height: .1px;
+    width: .1px !important;
+    height: .1px !important;
 
-    display: inline;
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: inline !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
 
-    pointer-events: none;
-    opacity: 0;
+    pointer-events: none !important;
+    opacity: 0 !important;
 }
 
 .hero .mb-carousel-item {
@@ -871,6 +873,7 @@ body {
     min-height: 100vh;
 
     text-align: center;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -879,7 +882,7 @@ body {
 }
 
 .section5 h2 {
-    padding: 5px 0;
+    white-space: nowrap;
     font-size: var(--xx-big);
     text-transform: capitalize;
 }
@@ -915,7 +918,7 @@ body {
 .section5>p {
     margin-top: 20px;
 
-    width: 80%;
+    width: 100%;
     font-size: var(--big);
     line-height: var(--big);
 }
@@ -1122,6 +1125,12 @@ body {
 }
 
 @media (max-width:750px) {
+
+    .hero .left,
+    .hero .right {
+        width: 80%;
+    }
+
     .lp-navbar {
         width: 90%;
         justify-content: space-between;
@@ -1229,6 +1238,12 @@ body {
         transform: translateY(-10px) rotate(-45deg);
         background-color: var(--main-color);
     }
+
+    .section1 .left,
+    .section1 .right {
+        width: 90%;
+    }
+
     .section2 .body .left .image-container {
         transform: translateX(10rem);
     }
@@ -1236,14 +1251,20 @@ body {
     .section2 .body .right {
         width: 70%;
     }
+
 }
 
 @media (max-width:650px) {
+    .hero-circle {
+        height: var(--mb-hero-circle-height);
+        clip-path: ellipse(95% 80% at 50% 8%);
+    }
 
     .hero .left,
     .hero .right {
         width: 80%;
     }
+
     .section2 .body .left .image-container {
         transform: translateX(5rem);
     }
@@ -1251,6 +1272,7 @@ body {
     .section2 .body .right {
         width: 80%;
     }
+
     .section3 .partners .row1,
     .section3 .partners .row2 {
         display: grid;
@@ -1267,7 +1289,80 @@ body {
     }
 }
 
+@media (max-width:500px) {
+    * {
+        white-space: normal !important;
+    }
+
+    .hero .left,
+    .hero .right {
+        width: 90%;
+    }
+
+    .mb-title {
+        white-space: normal;
+    }
+
+    .section2 .header {
+        width: 90%;
+    }
+
+    .section2 .header p {
+        width: 100%;
+    }
+
+    .section2 .body .left {
+        width: 95%;
+    }
+
+    .section2 .body .left .image-container {
+        transform: translateX(-15vw);
+    }
+
+    .section2 .right {
+        margin: 0;
+        width: 95%;
+    }
+
+    .features {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .feature,
+    .feature2 {
+        background-color: var(--txt2);
+        color: var(--txt2);
+    }
+
+    .feature:nth-of-type(2n) {
+        background-color: var(--main-color);
+    }
+
+    .feature p,
+    .feature2 p {
+        color: var(--main-color);
+    }
+
+    .feature:nth-of-type(2n) p {
+        color: var(--txt2);
+    }
+
+}
+
 @media (max-width:325px) {
+
+    .section1 .left,
+    .section1 .right {
+        width: 95%;
+    }
+
+    .section1 h2::before {
+        top: -10px;
+        right: -0.7em;
+        transform: rotate(15deg);
+        font-weight: 600;
+    }
 
     .section3 .partners .row1,
     .section3 .partners .row2 {
