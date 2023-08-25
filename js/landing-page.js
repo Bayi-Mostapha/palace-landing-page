@@ -7,6 +7,9 @@ var loader = document.querySelector('.loader');
 window.addEventListener('DOMContentLoaded', () => {
     loader.style.display = 'none';
     document.body.classList.remove('hide-overflow');
+    updateHeroHeight();
+    updateImgHeightVariable();
+    carouselLogic();
 });
 
 // ****************************** Intersection observer
