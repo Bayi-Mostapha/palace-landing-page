@@ -10,6 +10,10 @@
     --s2-body-height: 52rem;
 }
 
+html {
+    width: 100vw;
+}
+
 body {
     background-color: white;
     overflow-x: hidden !important;
@@ -488,10 +492,6 @@ body {
     left: 50%;
     transform: translateX(-50%);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     border: 2px solid var(--txt2);
     animation: pulse-animation 3s infinite;
     cursor: pointer;
@@ -499,8 +499,11 @@ body {
 }
 
 .go-down i {
-    font-size: 1rem;
-    transform: rotate(90deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+
     color: var(--txt2);
     transition: all 300ms;
 }
@@ -1130,7 +1133,9 @@ body {
     }
 
     .hero .left {
-        gap: 5px;
+        gap: .7rem;
+        text-align: center;
+        align-items: center;
     }
 
     .hero .hbtns {
