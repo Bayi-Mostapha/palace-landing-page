@@ -773,6 +773,7 @@ body {
 /* ******************************************** */
 
 .section3 {
+    overflow: hidden;
     margin-top: var(--section-margin);
     font-size: var(--parent-default);
     width: 100%;
@@ -879,6 +880,7 @@ body {
 
 /* ******************************************** */
 .section5 {
+    overflow: hidden;
     font-size: var(--parent-default);
     margin: var(--section-margin) auto 0 auto;
     width: 95%;
@@ -1219,6 +1221,11 @@ body {
     .lp-mobile-navlinks .navlink {
         color: var(--main-color);
         margin: 10% 0;
+    }
+
+    .active {
+        font-weight: 500;
+        border-bottom: 2px solid var(--main-color);
     }
 
     .lp-mobile-nav .btns {
