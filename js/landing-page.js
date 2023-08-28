@@ -83,7 +83,7 @@ function updateHeroHeight() {
     if (window.innerWidth > 1000) {
         root.style.setProperty('--section1-height', `calc(${section1_left}px + 25px)`);
     } else {
-        root.style.setProperty('--section1-height', `calc(${section1_left * 2}px + 55px)`);
+        root.style.setProperty('--section1-height', `calc(${section1_left * 2}px + 205px)`);
     }
 
     const section2_right = document.querySelector('.section2 .body .right').offsetHeight;
@@ -91,6 +91,19 @@ function updateHeroHeight() {
         root.style.setProperty('--s2-body-height', 52 + 'rem');
     } else {
         root.style.setProperty('--s2-body-height', `calc(${section2_right}px + 55rem)`);
+    }
+
+    const s2_right = document.querySelector('.section2 .body .right');
+    const s2_left = document.querySelector('.section2 .body .left');
+
+    if (window.innerWidth > 900) {
+        const available_space = window.innerWidth - (s2_right.offsetWidth + s2_left.offsetWidth);
+
+        root.style.setProperty('--s2-left', `${available_space / 2}px`);
+        root.style.setProperty('--s2-right', `${available_space / 2}px`);
+    } else {
+        root.style.setProperty('--s2-left', 'auto');
+        root.style.setProperty('--s2-right', 'auto');
     }
 }
 
