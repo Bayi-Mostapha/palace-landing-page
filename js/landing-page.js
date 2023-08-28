@@ -79,11 +79,12 @@ function updateHeroHeight() {
     }
 
     const section1_left = document.querySelector('.section1 .left').offsetHeight;
+    const section1_right = document.querySelector('.section1 .right img').offsetHeight;
 
     if (window.innerWidth > 1000) {
-        root.style.setProperty('--section1-height', `calc(${section1_left}px + 25px)`);
+        root.style.setProperty('--section1-height', `calc(${section1_right}px + 5rem)`);
     } else {
-        root.style.setProperty('--section1-height', `calc(${section1_left * 2}px + 205px)`);
+        root.style.setProperty('--section1-height', `${section1_left + section1_right + 205}px`);
     }
 
     const section2_right = document.querySelector('.section2 .body .right').offsetHeight;
