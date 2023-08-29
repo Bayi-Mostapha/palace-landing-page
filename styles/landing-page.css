@@ -517,15 +517,15 @@ body {
 /* ******************************************** */
 
 .section1 {
-    margin-top: var(--section-margin);
-    min-height: var(--section1-height);
+    margin-top: 200px;
+    height: var(--section1-height);
     font-size: var(--parent-default);
 
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-end;
 
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .section1 .left {
@@ -545,9 +545,9 @@ body {
     transform: rotate(20deg);
 
     color: var(--main-color);
-    font-weight: 700;
+    font-weight: 900;
     font-size: var(--x-big);
-    animation: floating2 6s ease-in-out infinite;
+    animation: floating2 10s ease-in-out infinite;
 }
 
 .section1 .left p {
@@ -569,12 +569,24 @@ body {
 
 .section1 .right {
     width: 40%;
-    height: 100%;
 }
 
-.section1 .image-container img {
+.section1 .image-container {
     width: 100%;
-    height: 100%;
+
+    position: relative;
+}
+
+.section1 .image-container .quest-mark {
+    width: 35%;
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%) rotate(3deg);
+}
+
+.section1 .image-container .girl {
+    width: 100%;
     object-fit: contain;
 }
 
@@ -1007,6 +1019,7 @@ body {
 @media (max-width:900px) {
     .section1 {
         flex-direction: column;
+        align-items: center;
     }
 
     .section1 .left,

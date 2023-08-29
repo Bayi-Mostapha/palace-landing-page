@@ -79,12 +79,13 @@ function updateHeroHeight() {
     }
 
     const section1_left = document.querySelector('.section1 .left').offsetHeight;
-    const section1_right = document.querySelector('.section1 .right img').offsetHeight;
+    const section1_right = document.querySelector('.section1 .right .girl').offsetHeight;
+    const quest_mark = document.querySelector('.section1 .right .quest-mark').offsetHeight;
 
-    if (window.innerWidth > 1000) {
-        root.style.setProperty('--section1-height', `calc(${section1_right}px + 5rem)`);
+    if (window.innerWidth > 900) {
+        root.style.setProperty('--section1-height', `${Math.max(section1_left, section1_right) + quest_mark + 55}px`);
     } else {
-        root.style.setProperty('--section1-height', `${section1_left + section1_right + 205}px`);
+        root.style.setProperty('--section1-height', `${section1_left + section1_right + quest_mark + 175}px`);
     }
 
     const section2_right = document.querySelector('.section2 .body .right').offsetHeight;
