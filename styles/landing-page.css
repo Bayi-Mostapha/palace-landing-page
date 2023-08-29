@@ -10,6 +10,7 @@
     --s2-body-height: 52rem;
 
     --section-margin: 150px;
+    --ssection-margin: 150px;
 
     --s2-right: 5%;
     --s2-left: 5%;
@@ -517,13 +518,12 @@ body {
 /* ******************************************** */
 
 .section1 {
-    margin-top: 200px;
     height: var(--section1-height);
     font-size: var(--parent-default);
 
     display: flex;
     justify-content: space-evenly;
-    align-items: flex-end;
+    align-items: center;
 
     overflow: hidden;
 }
@@ -574,26 +574,28 @@ body {
 .section1 .image-container {
     width: 100%;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     position: relative;
 }
 
 .section1 .image-container .quest-mark {
-    width: 35%;
+    height: 40%;
     position: absolute;
-    top: -30%;
+    top: -38%;
     left: 50%;
     transform: translateX(-50%) rotate(3deg);
 }
 
 .section1 .image-container .girl {
-    width: 100%;
+    width: 80%;
     object-fit: contain;
 }
 
 /* ******************************************** */
 .section2 {
-    margin-top: var(--section-margin);
-
     font-size: var(--parent-default);
 
     overflow: hidden;
@@ -1028,6 +1030,10 @@ body {
     }
 
     .section1 .right {
+        margin-top: var(--ssection-margin);
+    }
+
+    .section2 {
         margin-top: var(--section-margin);
     }
 
@@ -1038,10 +1044,6 @@ body {
     .section2 .body {
         flex-direction: column;
     }
-
-    /* .section2 .body .left .image-container {
-        transform: translateX(15rem);
-    } */
 
     .section2 .body .right {
         width: 90%;
@@ -1211,10 +1213,6 @@ body {
         width: 90%;
     }
 
-    /* .section2 .body .left .image-container {
-        transform: translateX(10rem);
-    } */
-
     .section2 .body .right {
         width: 90%;
     }
@@ -1240,10 +1238,6 @@ body {
     .hero .right {
         width: 80%;
     }
-
-    /* .section2 .body .left .image-container {
-        transform: translateX(5rem);
-    } */
 
     .section2 .body .right {
         width: 90%;
@@ -1288,10 +1282,6 @@ body {
         width: 90%;
     }
 
-    /* .section2 .body .left .image-container {
-        transform: translateX(-15vw);
-    } */
-
     .section2 .right {
         margin: 0;
         width: 90%;
@@ -1330,6 +1320,10 @@ body {
 
     .hero-circle {
         clip-path: none;
+    }
+
+    .section1 {
+        margin-top: var(--section-margin);
     }
 }
 
@@ -1378,10 +1372,6 @@ body {
         flex-direction: column;
         gap: 1em;
     }
-
-    /* .section2 .image-container {
-        transform: translateX(-12%) !important;
-    } */
 
     .section5 .circle-container {
         height: 2.5rem;
