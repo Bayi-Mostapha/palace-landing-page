@@ -1,12 +1,10 @@
 const root = document.documentElement;
-
-// ************************************************
-
 var loader = document.querySelector('.loader');
 
-window.addEventListener('DOMContentLoaded', () => {
+window.onload = function () {
     loader.style.display = 'none';
     document.body.classList.remove('hide-overflow');
+
     // ****************************** Intersection observer
 
     const faders = document.querySelectorAll('.fade-in');
@@ -235,4 +233,4 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         carouselLogic();
     });
-});
+};
