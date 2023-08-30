@@ -131,7 +131,7 @@ body {
     left: 0;
     z-index: -1;
 
-    clip-path: ellipse(80% 80% at 50% 8%);
+    clip-path: ellipse(80% 100% at 50% 0);
     background-color: var(--main-color);
     background: var(--circle-lr);
 }
@@ -518,6 +518,7 @@ body {
 /* ******************************************** */
 
 .section1 {
+    margin-top: var(--section-margin);
     height: var(--section1-height);
     font-size: var(--parent-default);
 
@@ -1231,7 +1232,6 @@ body {
 
     .hero-circle {
         height: var(--mb-hero-circle-height);
-        clip-path: ellipse(95% 80% at 50% 8%);
     }
 
     .hero .left,
