@@ -844,6 +844,7 @@ body {
 
 /* ******************************************** */
 .section5 {
+    padding-bottom: 40px;
     overflow: hidden;
     font-size: var(--parent-default);
     margin: var(--section-margin) auto 0 auto;
